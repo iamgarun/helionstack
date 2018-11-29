@@ -2,22 +2,23 @@ language: node_js
 cache:
   yarn: true
   directories:
-    - ~/.npm
-    - node_modules
+  - "~/.npm"
+  - node_modules
 notifications:
-  email: true
+  slack:
+    secure: TLsq2zm+6HVg6JCK6TLvsX+Rwiad5KhjqUQVUe34EwjuJv+qnakRWTMHQmh6egvW8V/lXNvQhVPz1Q/4QENL+Glg1zXdJtfHnj+uWGmLXorjXeIJTMF8+woIsCVy514Zu5xEH7phSGGLp/nrKhHk4Xpm9Kb51kC0q5cpmSWnh/MAiW2CPq4pXZjb9mWbMtMtygtEOO/bcid+NY4ymlzeAHqzlWLkAHHQQwvx0A07P7QJH89uA047HXlk5E1VizGz3tp2s36ZpJB7uYUENcbqs8PzLtlDG4Hk+A8/U7yWzL3e5Jz7ZWCONCdi+Co3e78MTgYzFHw+Wz8pDUz9IWsb8WvCVvcEhj/+qPsO43VtMGExdgVYJ1J70v1d0M7M5pj/hpUc4W+bvNHRttlcJ5XNfgMh5UDwFeKrtGVKx7tmDHOJGdLCnSL7rNtlg5MKzAbQ+7yEC5IM0G4/CGF8+4dZFM+sV8Bg4IOCNOF5tITs0FSnlzEdCXwOIMFiaUethCshG1TaPVih+xWxpsSIepXuBt6bMluEOfS9GgEUH3ky5Zgu3bwKxyD0af68BxlqWnVPfePQDjJwYQbQ71hZnM22o04QiAUvxXSm/ETnr5UmshVKrWnc0pVBOFS/nU1le+jWlNLk6uLL1uzy5vLzE9njqyIEIfUbOdTcCS3SvrH5lUw=
 node_js:
-  - '10'
+- '10'
 jobs:
   include:
-    - stage: "test"
-      script: yarn test
-    - stage: "coverage"
-      script: yarn check:coverage
-    - stage: "release"
-      script: yarn semantic-release
+  - stage: test
+    script: yarn test
+  - stage: coverage
+    script: yarn check:coverage
+  - stage: release
+    script: yarn semantic-release
 stages:
-  - test
-  - coverage
-  - name: release
-    if: branch = master AND type != pull_request
+- test
+- coverage
+- name: release
+  if: branch = master AND type != pull_request
