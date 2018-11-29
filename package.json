@@ -1,0 +1,219 @@
+{
+  "name": "helionstack",
+  "version": "0.0.0",
+  "description": "A DevOps Suite",
+  "scripts": {
+    "build": "cross-env easywebpack build prod",
+    "build:test": "cross-env easywebpack build test",
+    "build:prod": "cross-env easywebpack build prod",
+    "build:docs": "cd ./website && yarn build",
+    "postbuild:docs": "cd ..",
+    "dev": "cross-env WORKERS=1 node index.js",
+    "start": "cross-env EGG_SERVER_ENV=prod node index.js",
+    "start:test": "cross-env EGG_SERVER_ENV=test node index.js",
+    "kill-port": "kill -9 $(lsof -i:8888 |grep 'node'|aw '{print $2}') ",
+    "lint": "eslint .",
+    "test": "egg-bin test",
+    "check:coverage": "egg-bin cov",
+    "report:coveralls": "egg-bin cov report --reporter=text-lcov",
+    "ci": "yarn test && yarn check:coverage",
+    "fix": "eslint --fix .",
+    "commit": "git add . && git-cz",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release",
+    "semantic-release:dry": "semantic-release --dry-run",
+    "prettify": "prettier --write",
+    "generate": "plop --plopfile internals/generators/index.js"
+  },
+  "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.6",
+    "@material-ui/core": "^3.3.1",
+    "@material-ui/icons": "^3.0.1",
+    "async": "^2.6.1",
+    "axios": "^0.18.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "classnames": "^2.2.6",
+    "connected-react-router": "^4.5.0",
+    "cross-env": "^5.2.0",
+    "egg": "^2.1.0",
+    "egg-bcrypt": "^1.1.0",
+    "egg-cors": "^2.0.0",
+    "egg-logger": "^1.5.0",
+    "egg-passport": "^2.0.1",
+    "egg-passport-github": "^1.0.0",
+    "egg-rest": "^2.1.0",
+    "egg-socket.io": "^4.1.5",
+    "egg-validate": "^1.0.0",
+    "egg-view-react-ssr": "^2.1.0",
+    "egg-waterline": "^0.1.5",
+    "extend": "~3.0.0",
+    "history": "^4.7.2",
+    "husky": "^1.1.2",
+    "immutable": "^3.8.2",
+    "informed": "^1.10.8",
+    "loadable-components": "^2.2.3",
+    "lodash": "^4.17.4",
+    "mockjs": "^1.0.1-beta3",
+    "moment": "^2.17.1",
+    "react": "^16.0.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^16.0.0",
+    "react-helmet": "^5.2.0",
+    "react-hot-loader": "latest",
+    "react-intl": "^2.7.2",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-config": "^1.0.0-beta.4",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "react-select": "^2.1.1",
+    "react-singleton": "^1.3.3",
+    "react-social-login-buttons": "^2.3.0",
+    "react-swipeable-views": "^0.13.0",
+    "react-toastify": "^4.4.3",
+    "redux": "^3.7.2",
+    "redux-immutable": "^4.0.0",
+    "redux-saga": "^0.16.2",
+    "reselect": "^4.0.0",
+    "sanitize.css": "^8.0.0",
+    "socket.io-client": "^2.1.1",
+    "socket.io-react": "^1.2.0",
+    "styled-components": "^4.0.2",
+    "tunnel": "^0.0.6",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.1",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.5",
+    "@semantic-release/npm": "^5.0.5",
+    "@semantic-release/release-notes-generator": "^7.1.3",
+    "autod-egg": "^1.0.0",
+    "autoprefixer": "^7.1.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-dynamic-import-node": "1.2.0",
+    "babel-plugin-import": "^1.4.0",
+    "babel-plugin-react-intl": "2.4.0",
+    "babel-plugin-react-transform": "3.0.0",
+    "babel-plugin-styled-components": "1.5.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-constant-elements": "6.23.0",
+    "babel-plugin-transform-react-inline-elements": "6.22.0",
+    "babel-plugin-transform-react-jsx-source": "6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.13",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "commitizen": "^3.0.2",
+    "coveralls": "^3.0.2",
+    "css-loader": "^1.0.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "easywebpack-cli": "^3.5.0",
+    "easywebpack-react": "^3.6.0",
+    "egg-bin": "^4.9.0",
+    "egg-mock": "^3.20.1",
+    "egg-webpack": "^3.2.4",
+    "egg-webpack-react": "^2.0.0",
+    "eslint-config-egg": "^5.1.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.1.0",
+    "exports-loader": "^0.7.0",
+    "file-loader": "^2.0.0",
+    "gh-pages": "^2.0.1",
+    "html-loader": "^0.5.5",
+    "image-webpack-loader": "^4.4.0",
+    "imagemin-webpack-plugin": "^1.5.2",
+    "imports-loader": "^0.8.0",
+    "ip": "^1.1.5",
+    "istanbul": "^0.4.5",
+    "jss": "^9.8.7",
+    "jss-loader": "^1.0.0",
+    "lint-staged": "^7.3.0",
+    "null-loader": "^0.1.1",
+    "plop": "^2.1.0",
+    "postcss-loader": "^3.0.0",
+    "prettier": "1.14.3",
+    "semantic-release": "^15.10.3",
+    "style-loader": "^0.23.1",
+    "svg-url-loader": "^2.3.2",
+    "travis-deploy-once": "^5.0.9",
+    "uglifyjs-webpack-plugin": "^1.1.2",
+    "url-loader": "^1.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn fix && lint-staged && git add ."
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "release": {
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "docs/CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "docs",
+            "package.json"
+          ],
+          "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "nyc": {
+    "check-coverage": false,
+    "per-file": true,
+    "lines": 80,
+    "statements": 80,
+    "functions": 80,
+    "branches": 80,
+    "reporter": [
+      "lcov",
+      "text-lcov"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "ci": {
+    "version": "6, 8, 9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:helionstack/helionstack.git"
+  },
+  "author": "Akki <akshay.scythe@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/helionstack/helionstack"
+}

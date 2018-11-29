@@ -1,0 +1,23 @@
+language: node_js
+cache:
+  yarn: true
+  directories:
+    - ~/.npm
+    - node_modules
+notifications:
+  email: true
+node_js:
+  - '10'
+jobs:
+  include:
+    - stage: "test"
+      script: yarn test
+    - stage: "coverage"
+      script: yarn check:coverage
+    - stage: "release"
+      script: yarn semantic-release
+stages:
+  - test
+  - coverage
+  - name: release
+    if: branch = master AND type != pull_request

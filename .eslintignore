@@ -1,0 +1,14 @@
+test/fixtures
+test/benchmark
+test/client
+
+coverage/
+private/
+run/
+docs/
+website/
+
+public/
+node_modules/
+test.js
+app/view/
