@@ -91,12 +91,9 @@ module.exports = app => {
   };
 
   config.passportGithub = {
-    key: 'f40057f71eae9a48a603',
-    secret: '47ee7f040eb74cd83ded0642b9e85215aa58c4bb',
-    authorizationURL: 'https://github.hpe.com/login/oauth/authorize',
-    tokenURL: 'https://github.hpe.com/login/oauth/access_token',
-    userProfileURL: 'https://github.hpe.com/api/v3/user',
-    callbackURL: 'https://localhost:7001/passport/github/callback',
+    key: process.env.GH_KEY,
+    secret: process.env.GH_SECRET,
+    callbackURL: process.env.GH_CB_URL,
   };
 
   return config;

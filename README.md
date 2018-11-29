@@ -56,4 +56,4 @@ how to propose bug-fixes and improvements, and how to build and test your change
 
 ## License
 
-[HPE](LICENSE)
+[MIT](LICENSE)
