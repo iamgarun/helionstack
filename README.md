@@ -1,5 +1,7 @@
 <div align="center"><strong>A DevOps Suite</strong></div>
 
+<div align="center"><img src="https://api.travis-ci.org/helionstack/helionstack.svg?branch=master" /></div>
+
 # Development
 
 You can follow the steps outlined below to get started with development.
