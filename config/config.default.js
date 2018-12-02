@@ -43,10 +43,10 @@ module.exports = app => {
     key: 'APP_SESS',
   };
 
-  config.frontend = {
+  /*config.frontend = {
     publicPath: '/home/',
     dirPath: 'web',
-  };
+  };*/
 
   config.rest = {
     urlprefix: '/api/', // Prefix of rest api url. Default to /api/

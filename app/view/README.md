@@ -1,1 +1,3 @@
-## egg 规范 view 目录, 保证 view 文件夹存在, 否则 app.config.view.root 为空, 编译服务器文件会存放到该目录.
+#### Egg Specification view directory 
+ensure that the view folder exists, otherwise app.config.view.root is empty, 
+the compiled server file will be stored in this directory.

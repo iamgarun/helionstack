@@ -9,7 +9,8 @@
     "build:docs": "cd ./website && yarn build",
     "postbuild:docs": "cd ..",
     "dev": "cross-env WORKERS=1 node index.js",
-    "start": "cross-env EGG_SERVER_ENV=prod node index.js",
+    "start": "node index.js",
+    "start:prod": "crossenv EGG_SERVER_ENV=prod node index.js",
     "start:test": "cross-env EGG_SERVER_ENV=test node index.js",
     "kill-port": "kill -9 $(lsof -i:8888 |grep 'node'|aw '{print $2}') ",
     "lint": "eslint .",
@@ -46,6 +47,7 @@
     "egg-validate": "^1.0.0",
     "egg-view-react-ssr": "^2.1.0",
     "egg-waterline": "^0.1.5",
+    "es6-error": "^4.1.1",
     "extend": "~3.0.0",
     "history": "^4.7.2",
     "husky": "^1.1.2",
@@ -178,6 +180,9 @@
         "@semantic-release/git",
         {
           "assets": [
+            "app/view/**/*",
+            "public/**/*",
+            "app/config/**/*",
             "docs",
             "package.json"
           ],

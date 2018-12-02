@@ -6,7 +6,6 @@ npm-debug.log
 .nyc_output/
 dist
 static
-public/
 private
 run
 *.iml
@@ -18,9 +17,4 @@ _site
 logs
 .vscode
 config/buildConfig.json
-config/manifest.json
-app/view/*
-!app/view/layout.html
-!app/view/README.md
-!app/view/.gitkeep
 package-lock.json

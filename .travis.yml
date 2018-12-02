@@ -11,10 +11,12 @@ node_js:
 - '10'
 jobs:
   include:
-  - stage: test
+  - stage: "test"
     script: yarn test
-  - stage: coverage
+  - stage: "coverage"
     script: yarn check:coverage
+  - stage: "build:production"
+    script: yarn build:prod
   - stage: release
     script: yarn semantic-release
     deploy:
