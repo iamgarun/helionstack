@@ -69,7 +69,7 @@ module.exports = app => {
   };
 
   config.bcrypt = {
-    saltRounds: 13, // default 10
+    saltRounds: 14, // default 10
   };
 
   config.waterline = {
