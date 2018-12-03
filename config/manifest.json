@@ -1,24 +1,38 @@
 {
-  "home.js": "/public/js/home.js",
-  "layout.js": "/public/js/layout.js",
-  "common.js": "/public/js/common.js",
-  "img/logo.png": "/public/img/logo.png",
-  "vendor.js": "/public/js/vendor.js",
+  "home.js": "/public/js/home.cf7894fe.js",
+  "layout.js": "/public/js/layout.73adaf19.js",
+  "common.js": "/public/js/common.4a3de7b0.js",
+  "img/logo.png": "/public/img/logo.3cd934bb.png",
+  "vendor.js": "/public/js/vendor.fdf6c92f.js",
   "deps": {
     "home.js": {
-      "js": ["/public/js/vendor.js", "/public/js/common.js", "/public/js/home.js"],
+      "js": [
+        "/public/js/vendor.fdf6c92f.js",
+        "/public/js/common.4a3de7b0.js",
+        "/public/js/home.cf7894fe.js"
+      ],
       "css": []
     },
     "layout.js": {
-      "js": ["/public/js/vendor.js", "/public/js/common.js", "/public/js/layout.js"],
+      "js": [
+        "/public/js/vendor.fdf6c92f.js",
+        "/public/js/common.4a3de7b0.js",
+        "/public/js/layout.73adaf19.js"
+      ],
       "css": []
     },
     "common.js": {
-      "js": ["/public/js/common.js", "/public/js/common.js"],
+      "js": [
+        "/public/js/common.4a3de7b0.js",
+        "/public/js/common.4a3de7b0.js"
+      ],
       "css": []
     },
     "vendor.js": {
-      "js": ["/public/js/common.js", "/public/js/vendor.js"],
+      "js": [
+        "/public/js/common.4a3de7b0.js",
+        "/public/js/vendor.fdf6c92f.js"
+      ],
       "css": []
     }
   },
