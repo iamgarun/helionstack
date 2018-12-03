@@ -55,7 +55,7 @@ class LoginPage extends React.PureComponent {
     return (
       <div className={classes.root}>
         <Helmet>
-          <title>Identity | Dashboard</title>
+          <title>Helionstack | Dashboard</title>
         </Helmet>
         <ReactFullPage
           licenseKey="OPEN-SOURCE-GPLV3-LICENSE"
@@ -67,11 +67,10 @@ class LoginPage extends React.PureComponent {
                   <Typography variant="h5">
                     Welcome to{' '}
                     <Typography color="primary" component="span" variant="h5" style={{ display: 'initial' }}>
-                      HPE
+                      Helion
                     </Typography>
-                    {' | '}
                     <Typography color="secondary" component="span" variant="h5" style={{ display: 'initial' }}>
-                      Avalon
+                      stack
                     </Typography>
                   </Typography>
                   <br />
@@ -80,7 +79,7 @@ class LoginPage extends React.PureComponent {
                     <CircularProgress />
                   ) : (
                     <GithubLoginButton onClick={this.handleLogin}>
-                      <span>Login with GitHub Enterprise</span>
+                      <span>Login with GitHub</span>
                     </GithubLoginButton>
                   )}
                 </Grid>

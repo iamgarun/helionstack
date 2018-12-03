@@ -37,7 +37,7 @@ class DashboardPage extends React.PureComponent {
     return (
       <div className={classes.root}>
         <Helmet>
-          <title>Avalon | Dashboard</title>
+          <title>Helionstack | Dashboard</title>
         </Helmet>
         <MenuBar>Dashboard</MenuBar>
       </div>
