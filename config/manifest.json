@@ -1,5 +1,5 @@
 {
-  "home.js": "/public/js/home.cf7894fe.js",
+  "home.js": "/public/js/home.07e9d39e.js",
   "layout.js": "/public/js/layout.73adaf19.js",
   "common.js": "/public/js/common.4a3de7b0.js",
   "img/logo.png": "/public/img/logo.3cd934bb.png",
@@ -9,7 +9,7 @@
       "js": [
         "/public/js/vendor.fdf6c92f.js",
         "/public/js/common.4a3de7b0.js",
-        "/public/js/home.cf7894fe.js"
+        "/public/js/home.07e9d39e.js"
       ],
       "css": []
     },

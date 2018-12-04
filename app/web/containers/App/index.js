@@ -11,7 +11,6 @@ import { blue, orange } from '@material-ui/core/colors';
 import subscriber from '../../helpers/subscriber';
 import routes from './routes';
 
-const socket = io.connect('http://localhost:7001');
 const palette = {
   primary: blue,
   secondary: orange,
@@ -48,7 +47,8 @@ class App extends Component {
       isLoading: true,
     };
 
-    subscriber.init(socket);
+    this.socket = io.connect('');
+    subscriber.init(this.socket);
   }
 
   componentDidMount() {
@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <Scrollbars style={{ height: '100vh' }}>
         <MuiThemeProvider theme={theme}>
-          <SocketProvider socket={socket}>
+          <SocketProvider socket={this.socket}>
             {isLoading ? (
               <div
                 style={{

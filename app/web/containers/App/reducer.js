@@ -21,6 +21,7 @@ export const initialState = fromJS({
     provider: '',
     info: {},
   },
+  hostname: '',
 });
 
 const appReducer = (state = initialState, action) => {
