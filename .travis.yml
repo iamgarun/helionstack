@@ -15,8 +15,6 @@ jobs:
     script: yarn test
   - stage: "coverage"
     script: yarn check:coverage
-  - stage: "build:production"
-    script: yarn build:prod
   - stage: release
     script: yarn semantic-release
     deploy:
@@ -27,6 +25,5 @@ jobs:
 stages:
 - test
 - coverage
-- name: "build:production"
 - name: release
   if: branch = master AND type != pull_request
